@@ -1,0 +1,25 @@
+/* Copyright (c) 2009 by Ivan Kelly, All Rights Reserved. */
+
+TARGET libgambcgsi.lib
+TARGETTYPE LIB
+
+MACRO ___DONT_HAVE_NEW
+MACRO ___LIBRARY
+
+OPTION CW -w nounused 
+OPTION GCC  -Wno-unused -Wno-reorder 
+OPTION GCCE  -Wno-unused -Wno-reorder
+OPTION ARMCC -W
+
+userinclude	 ../../../lib
+userinclude 	 ../inc
+userinclude 	 ../../../include
+
+SOURCEPATH  ../../../gsi
+SOURCE _gsilib.c
+SOURCE _gambcgsi.c
+
+systeminclude		\epoc32\include
+systeminclude		\epoc32\include\stdapis
+
+CAPABILITY None

@@ -1,0 +1,6 @@
+(read-char)
+(display "hello world")
+(newline)
+(display "[press any key to continue]")
+(newline)
+(read-char)

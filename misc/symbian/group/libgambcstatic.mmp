@@ -1,0 +1,54 @@
+/* Copyright (c) 2009 by Ivan Kelly, All Rights Reserved. */
+
+TARGET libgambc.lib
+TARGETTYPE LIB
+
+EPOCALLOWDLLDATA
+ALWAYS_BUILD_AS_ARM
+
+MACRO ___DONT_HAVE_NEW
+MACRO ___LIBRARY
+MACRO ___PRIMAL
+
+OPTION CW -w nounused 
+OPTION GCC -Wno-unused -Wno-reorder 
+OPTION GCCE -Wno-unused -Wno-reorder
+OPTION ARMCC -W
+
+userinclude	 ../../../lib
+userinclude 	 ../inc
+userinclude 	 ../../../include
+
+SOURCEPATH ../../../lib
+
+SOURCE mem.c
+
+SOURCE main.c
+SOURCE setup.c
+
+SOURCE os.c
+SOURCE os_base.c
+SOURCE os_time.c
+SOURCE os_shell.c
+SOURCE os_files.c
+SOURCE os_dyn.c
+SOURCE os_tty.c
+SOURCE os_io.c
+SOURCE c_intf.c
+
+SOURCE _kernel.c
+SOURCE _system.c
+SOURCE _num.c
+SOURCE _std.c
+SOURCE _eval.c
+SOURCE _io.c
+SOURCE _nonstd.c
+SOURCE _thread.c
+SOURCE _repl.c
+
+SOURCE _gambc.c
+
+systeminclude		\epoc32\include
+systeminclude		\epoc32\include\stdapis
+
+CAPABILITY None

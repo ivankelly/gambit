@@ -1,0 +1,23 @@
+/** @file gsi_reg.rss
+ * Application registry file
+ */ 
+/*
+* ==============================================================================
+*  Name        : gsi_reg.rss
+*  Version     : 1.0
+* ==============================================================================
+*/
+
+#include <appinfo.rh>
+
+UID2 KUidAppRegistrationResourceFile
+UID3 0xA000DF86
+
+RESOURCE APP_REGISTRATION_INFO
+  {
+  app_file="gsi";
+
+  embeddability=KAppNotEmbeddable;
+  newfile=KAppDoesNotSupportNewFile;
+  }
+

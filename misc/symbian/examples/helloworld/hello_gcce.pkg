@@ -1,0 +1,28 @@
+;/** @file hello_gcce.pkg
+; * Package file specific to the GCCE platform.
+; */
+; ============================================================================
+;  Name        : hello_gcce.pkg
+;  Version     : 0.0.1
+; ============================================================================
+
+;Languages
+&EN
+
+;Header
+#{"Hello"},(0xA000DF87),0,0,1
+
+;Localised Vendor name
+%{"Vendor-EN"}
+
+;Unique Vendor name
+:"Vendor"
+
+;Supports Series 60 v 3.0
+[0x101F7961], 0, 0, 0, {"S60ProductID"}
+
+;Files to install
+"\symbian\sdk50\epoc32\release\gcce\urel\hello.exe"-"!:\sys\bin\hello.exe"
+"\symbian\sdk50\epoc32\data\z\private\10003a3f\import\apps\hello_reg.rsc" -"!:\private\10003a3f\import\apps\hello_reg.rsc"
+
+

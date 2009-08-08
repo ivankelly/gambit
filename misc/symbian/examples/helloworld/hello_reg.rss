@@ -1,0 +1,24 @@
+/** @file hello_reg.rss
+ * Application registry file
+ */ 
+
+/*
+* ==============================================================================
+*  Name        : hello_reg.rss
+*  Version     : 1.0
+* ==============================================================================
+*/
+
+#include <appinfo.rh>
+
+UID2 KUidAppRegistrationResourceFile
+UID3 0xA000DF87
+
+RESOURCE APP_REGISTRATION_INFO
+  {
+  app_file="hello";
+
+  embeddability=KAppNotEmbeddable;
+  newfile=KAppDoesNotSupportNewFile;
+  }
+

@@ -1,0 +1,46 @@
+/* Copyright (c) 2009 by Ivan Kelly, All Rights Reserved. */
+
+TARGET gsi.exe
+TARGETTYPE STDEXE
+uid 0x20004c45 0xA000DF86
+vendorid           0
+
+WCHARENTRYPOINT 
+
+OPTION CW -w nounused
+OPTION GCCE  -Wno-unused -Wno-reorder
+
+userinclude	 ../../../lib
+userinclude 	 ../inc
+userinclude 	 ../../../include
+
+MACRO ___DONT_HAVE_NEW
+
+SOURCEPATH  ../../../gsi
+
+SOURCE _gsi.c
+SOURCE _gsi_.c
+
+sourcepath      ../src
+//SOURCE shim.c
+
+systeminclude		\epoc32\include
+systeminclude		\epoc32\include\stdapis
+
+library		euser.lib
+library 	libm.lib
+
+staticlibrary		libgambc.lib
+staticlibrary		libgambcgsi.lib
+
+
+sourcepath .
+start resource  gsi_reg.rss
+#ifdef winscw
+targetpath 	    \private\10003a3f\apps
+#else
+targetpath 	    \private\10003a3f\import\apps
+#endif
+end
+
+CAPABILITY None

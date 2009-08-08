@@ -1,0 +1,37 @@
+/* Copyright (c) 2009 by Ivan Kelly, All Rights Reserved. */
+
+TARGET hello.exe
+TARGETTYPE STDEXE
+uid 0x20004c45 0xA000DF87
+vendorid           0
+
+WCHARENTRYPOINT
+OPTION CW  -w nounused
+OPTION GCCE  -Wno-unused
+
+userinclude 	 ../../inc
+
+MACRO ___DONT_HAVE_NEW
+
+SOURCEPATH  .
+
+SOURCE hello.c
+SOURCE hello_.c
+
+start resource  hello_reg.rss
+#ifdef winscw
+targetpath 	    \private\10003a3f\apps
+#else
+targetpath 	    \private\10003a3f\import\apps
+#endif
+end
+
+systeminclude		\epoc32\include
+systeminclude		\epoc32\include\stdapis
+
+library		libm.lib
+library		euser.lib
+
+staticlibrary		libgambc.lib
+
+CAPABILITY None

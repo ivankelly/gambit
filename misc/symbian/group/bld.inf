@@ -1,0 +1,16 @@
+/* Copyright (c) 2009 by Ivan Kelly, All Rights Reserved. */
+
+PRJ_EXPORTS
+../inc/gambit.h
+
+PRJ_MMPFILES
+#ifdef ___SHARED
+libgambc
+libgambcgsi
+gsi
+#else
+libgambcstatic
+libgambcgsistatic
+gsistatic
+#endif
+

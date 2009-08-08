@@ -1,0 +1,30 @@
+;/** @file gambit_gcce.pkg
+; * Package file specific to the GCCE platform.
+; */
+; ============================================================================
+;  Name        : gambit_gcce.pkg
+;  Version     : 4.5.1
+; ============================================================================
+
+;Languages
+&EN
+
+;Header
+#{"Gambit"},(0xA000DF86),4,5,1
+
+;Localised Vendor name
+%{"Vendor-EN"}
+
+;Unique Vendor name
+:"Vendor"
+
+;Supports Series 60 v 3.0
+[0x101F7961], 0, 0, 0, {"S60ProductID"}
+
+;Files to install
+"\symbian\sdk50\epoc32\release\gcce\urel\gsi.exe"-"!:\sys\bin\gsi.exe"
+"\symbian\sdk50\epoc32\data\z\private\10003a3f\import\apps\gsi_reg.rsc" -"!:\private\10003a3f\import\apps\gsi_reg.rsc"
+
+;required for application to be covered by backup/restore facility
+"..\group\backup_registration.xml"						-"!:\private\A000DF86\backup_registration.xml"
+
