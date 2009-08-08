@@ -21,9 +21,6 @@ SOURCEPATH  ../../../gsi
 SOURCE _gsi.c
 SOURCE _gsi_.c
 
-sourcepath      ../src
-//SOURCE shim.c
-
 systeminclude		\epoc32\include
 systeminclude		\epoc32\include\stdapis
 
